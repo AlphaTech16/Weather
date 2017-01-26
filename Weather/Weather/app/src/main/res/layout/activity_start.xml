@@ -7,6 +7,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.avash.weather.activity.StartActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#54232323"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="city"
+            android:gravity="right"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:layout_weight="1"/>
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:id="@+id/citySpinner"
+            android:gravity="center"
+            style="@style/Animation.AppCompat.Dialog" >
+
+        </Spinner>
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
