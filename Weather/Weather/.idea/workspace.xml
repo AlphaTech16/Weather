@@ -11,14 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf6b37b6-aba2-4078-a09f-b54a18474272" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/clear_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/wind.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/avash/weather/api/WeatherApi.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/avash/weather/api/WeatherApi.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
     </list>
     <ignored path="Weather.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,26 +40,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StartActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StartActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="248" column="44" selection-start-line="248" selection-start-column="44" selection-end-line="248" selection-end-column="44" />
+            <state relative-caret-position="359">
+              <caret line="416" column="76" selection-start-line="416" selection-start-column="76" selection-end-line="416" selection-end-column="76" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest">
-            <state />
           </provider>
         </entry>
       </file>
@@ -77,41 +60,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_start.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activity_start.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
-              <caret line="552" column="57" selection-start-line="552" selection-start-column="57" selection-end-line="552" selection-end-column="57" />
-              <folding>
-                <element signature="e#8894#11016#0" expanded="false" />
-                <element signature="e#11033#13155#0" expanded="false" />
-                <element signature="e#13172#15302#0" expanded="false" />
-                <element signature="e#15319#17445#0" expanded="false" />
-                <element signature="e#17462#19588#0" expanded="false" />
-                <element signature="e#19605#21727#0" expanded="false" />
-                <element signature="e#19857#20292#0" expanded="false" />
-                <element signature="e#20313#20653#0" expanded="false" />
-                <element signature="e#21744#23874#0" expanded="false" />
-                <element signature="e#22817#23319#0" expanded="false" />
-                <element signature="e#23340#23841#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
           <provider editor-type-id="android-designer2">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="884" column="40" selection-start-line="884" selection-start-column="40" selection-end-line="884" selection-end-column="40" />
+              <folding>
+                <element signature="e#9044#11166#0" expanded="false" />
+                <element signature="e#11183#13305#0" expanded="false" />
+                <element signature="e#13322#15452#0" expanded="false" />
+                <element signature="e#15469#17595#0" expanded="false" />
+                <element signature="e#17612#19738#0" expanded="false" />
+                <element signature="e#19755#21877#0" expanded="false" />
+                <element signature="e#20007#20442#0" expanded="false" />
+                <element signature="e#20463#20803#0" expanded="false" />
+                <element signature="e#22967#23469#0" expanded="false" />
+                <element signature="e#23490#23991#0" expanded="false" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="spinner_item.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
           <provider editor-type-id="android-designer2">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -1795,14 +1777,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/font.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/font.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/avash/weather/api/WeatherApi.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" />
       </list>
     </option>
   </component>
@@ -1837,62 +1820,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Weather" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Weather" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Weather" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Weather" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1900,7 +1834,7 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="CB5A2587JU" />
+    <property name="device.picker.selection" value="Nexus_4_API_Lollipop_22" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
   </component>
   <component name="RecentsManager">
@@ -2217,7 +2151,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2234,13 +2168,13 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2266,14 +2200,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java</url>
-          <line>96</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
@@ -2296,37 +2222,207 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding>
+            <element signature="e#9044#11166#0" expanded="false" />
+            <element signature="e#11183#13305#0" expanded="false" />
+            <element signature="e#13322#15452#0" expanded="false" />
+            <element signature="e#15469#17595#0" expanded="false" />
+            <element signature="e#17612#19738#0" expanded="false" />
+            <element signature="e#19755#21877#0" expanded="false" />
+            <element signature="e#20007#20442#0" expanded="false" />
+            <element signature="e#20463#20803#0" expanded="false" />
+            <element signature="e#22967#23469#0" expanded="false" />
+            <element signature="e#23490#23991#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/api/WeatherApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4386">
+          <caret line="552" column="57" selection-start-line="552" selection-start-column="57" selection-end-line="552" selection-end-column="57" />
+          <folding>
+            <element signature="e#9044#11166#0" expanded="false" />
+            <element signature="e#11183#13305#0" expanded="false" />
+            <element signature="e#13322#15452#0" expanded="false" />
+            <element signature="e#15469#17595#0" expanded="false" />
+            <element signature="e#17612#19738#0" expanded="false" />
+            <element signature="e#19755#21877#0" expanded="false" />
+            <element signature="e#20007#20442#0" expanded="false" />
+            <element signature="e#20463#20803#0" expanded="false" />
+            <element signature="e#22967#23469#0" expanded="false" />
+            <element signature="e#23490#23991#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/api/WeatherApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4386">
+          <caret line="552" column="57" selection-start-line="552" selection-start-column="57" selection-end-line="552" selection-end-column="57" />
+          <folding>
+            <element signature="e#9044#11166#0" expanded="false" />
+            <element signature="e#11183#13305#0" expanded="false" />
+            <element signature="e#13322#15452#0" expanded="false" />
+            <element signature="e#15469#17595#0" expanded="false" />
+            <element signature="e#17612#19738#0" expanded="false" />
+            <element signature="e#19755#21877#0" expanded="false" />
+            <element signature="e#20007#20442#0" expanded="false" />
+            <element signature="e#20463#20803#0" expanded="false" />
+            <element signature="e#22967#23469#0" expanded="false" />
+            <element signature="e#23490#23991#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/api/WeatherApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="42" column="35" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="35" />
           <folding>
-            <element signature="e#8894#11016#0" expanded="false" />
-            <element signature="e#11033#13155#0" expanded="false" />
-            <element signature="e#13172#15302#0" expanded="false" />
-            <element signature="e#15319#17445#0" expanded="false" />
-            <element signature="e#17462#19588#0" expanded="false" />
-            <element signature="e#19605#21727#0" expanded="false" />
-            <element signature="e#19857#20292#0" expanded="false" />
-            <element signature="e#20313#20653#0" expanded="false" />
-            <element signature="e#21744#23874#0" expanded="false" />
-            <element signature="e#22817#23319#0" expanded="false" />
-            <element signature="e#23340#23841#0" expanded="false" />
+            <element signature="e#9044#11166#0" expanded="false" />
+            <element signature="e#11183#13305#0" expanded="false" />
+            <element signature="e#13322#15452#0" expanded="false" />
+            <element signature="e#15469#17595#0" expanded="false" />
+            <element signature="e#17612#19738#0" expanded="false" />
+            <element signature="e#19755#21877#0" expanded="false" />
+            <element signature="e#20007#20442#0" expanded="false" />
+            <element signature="e#20463#20803#0" expanded="false" />
+            <element signature="e#22967#23469#0" expanded="false" />
+            <element signature="e#23490#23991#0" expanded="false" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java">
@@ -2346,37 +2442,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="e#8894#11016#0" expanded="false" />
-            <element signature="e#11033#13155#0" expanded="false" />
-            <element signature="e#13172#15302#0" expanded="false" />
-            <element signature="e#15319#17445#0" expanded="false" />
-            <element signature="e#17462#19588#0" expanded="false" />
-            <element signature="e#19605#21727#0" expanded="false" />
-            <element signature="e#19857#20292#0" expanded="false" />
-            <element signature="e#20313#20653#0" expanded="false" />
-            <element signature="e#21744#23874#0" expanded="false" />
-            <element signature="e#22817#23319#0" expanded="false" />
-            <element signature="e#23340#23841#0" expanded="false" />
+            <element signature="e#9044#11166#0" expanded="false" />
+            <element signature="e#11183#13305#0" expanded="false" />
+            <element signature="e#13322#15452#0" expanded="false" />
+            <element signature="e#15469#17595#0" expanded="false" />
+            <element signature="e#17612#19738#0" expanded="false" />
+            <element signature="e#19755#21877#0" expanded="false" />
+            <element signature="e#20007#20442#0" expanded="false" />
+            <element signature="e#20463#20803#0" expanded="false" />
+            <element signature="e#22967#23469#0" expanded="false" />
+            <element signature="e#23490#23991#0" expanded="false" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java">
@@ -2396,37 +2491,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
-            <element signature="e#8894#11016#0" expanded="false" />
-            <element signature="e#11033#13155#0" expanded="false" />
-            <element signature="e#13172#15302#0" expanded="false" />
-            <element signature="e#15319#17445#0" expanded="false" />
-            <element signature="e#17462#19588#0" expanded="false" />
-            <element signature="e#19605#21727#0" expanded="false" />
-            <element signature="e#19857#20292#0" expanded="false" />
-            <element signature="e#20313#20653#0" expanded="false" />
-            <element signature="e#21744#23874#0" expanded="false" />
-            <element signature="e#22817#23319#0" expanded="false" />
-            <element signature="e#23340#23841#0" expanded="false" />
+            <element signature="e#9044#11166#0" expanded="false" />
+            <element signature="e#11183#13305#0" expanded="false" />
+            <element signature="e#13322#15452#0" expanded="false" />
+            <element signature="e#15469#17595#0" expanded="false" />
+            <element signature="e#17612#19738#0" expanded="false" />
+            <element signature="e#19755#21877#0" expanded="false" />
+            <element signature="e#20007#20442#0" expanded="false" />
+            <element signature="e#20463#20803#0" expanded="false" />
+            <element signature="e#22967#23469#0" expanded="false" />
+            <element signature="e#23490#23991#0" expanded="false" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java">
@@ -2438,33 +2532,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
           <folding>
-            <element signature="e#8894#11016#0" expanded="false" />
-            <element signature="e#11033#13155#0" expanded="false" />
-            <element signature="e#13172#15302#0" expanded="false" />
-            <element signature="e#15319#17445#0" expanded="false" />
-            <element signature="e#17462#19588#0" expanded="false" />
-            <element signature="e#19605#21727#0" expanded="false" />
-            <element signature="e#19857#20292#0" expanded="false" />
-            <element signature="e#20313#20653#0" expanded="false" />
-            <element signature="e#21744#23874#0" expanded="false" />
-            <element signature="e#22817#23319#0" expanded="false" />
-            <element signature="e#23340#23841#0" expanded="false" />
+            <element signature="e#9044#11166#0" expanded="false" />
+            <element signature="e#11183#13305#0" expanded="false" />
+            <element signature="e#13322#15452#0" expanded="false" />
+            <element signature="e#15469#17595#0" expanded="false" />
+            <element signature="e#17612#19738#0" expanded="false" />
+            <element signature="e#19755#21877#0" expanded="false" />
+            <element signature="e#20007#20442#0" expanded="false" />
+            <element signature="e#20463#20803#0" expanded="false" />
+            <element signature="e#22967#23469#0" expanded="false" />
+            <element signature="e#23490#23991#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2502,38 +2587,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="552" column="57" selection-start-line="552" selection-start-column="57" selection-end-line="552" selection-end-column="57" />
-          <folding>
-            <element signature="e#8894#11016#0" expanded="false" />
-            <element signature="e#11033#13155#0" expanded="false" />
-            <element signature="e#13172#15302#0" expanded="false" />
-            <element signature="e#15319#17445#0" expanded="false" />
-            <element signature="e#17462#19588#0" expanded="false" />
-            <element signature="e#19605#21727#0" expanded="false" />
-            <element signature="e#19857#20292#0" expanded="false" />
-            <element signature="e#20313#20653#0" expanded="false" />
-            <element signature="e#21744#23874#0" expanded="false" />
-            <element signature="e#22817#23319#0" expanded="false" />
-            <element signature="e#23340#23841#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/3564ebef90ac75e61ed65ab9af0f422ce92d4afa/retrofit-2.1.0-sources.jar!/retrofit2/ExecutorCallAdapterFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/api/WeatherApi.java">
@@ -2544,22 +2640,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="359">
+          <caret line="416" column="76" selection-start-line="416" selection-start-column="76" selection-end-line="416" selection-end-column="76" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
+      <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/avash/weather/activity/StartActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="248" column="44" selection-start-line="248" selection-start-column="44" selection-end-line="248" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="273">
+          <caret line="884" column="40" selection-start-line="884" selection-start-column="40" selection-end-line="884" selection-end-column="40" />
+          <folding>
+            <element signature="e#9044#11166#0" expanded="false" />
+            <element signature="e#11183#13305#0" expanded="false" />
+            <element signature="e#13322#15452#0" expanded="false" />
+            <element signature="e#15469#17595#0" expanded="false" />
+            <element signature="e#17612#19738#0" expanded="false" />
+            <element signature="e#19755#21877#0" expanded="false" />
+            <element signature="e#20007#20442#0" expanded="false" />
+            <element signature="e#20463#20803#0" expanded="false" />
+            <element signature="e#22967#23469#0" expanded="false" />
+            <element signature="e#23490#23991#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,12 +1,16 @@
 package com.avash.weather.activity;
 
+import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -40,7 +44,7 @@ public class StartActivity extends AppCompatActivity {
 
     ScrollView scrollView;
 
-    TextView avgTextView,maxTextView,minTextView,textTextView,windTextView;
+    TextView avgTextView,maxTextView,minTextView,textTextView,windTextView,poweredbyTextView;
 
     ImageView minImageView,maxImageView,textImageView;
 
@@ -51,6 +55,8 @@ public class StartActivity extends AppCompatActivity {
 
     Call<Weather>weatherCall;
     Weather weather;
+
+    Window window;
 
     ArrayList<String>cities;
     ArrayAdapter<String>cityAdapter;
@@ -89,31 +95,40 @@ public class StartActivity extends AppCompatActivity {
     ImageView dayFiveIV;
     ImageView daySixIV;
     ImageView daySevenIV;
-    //-------------------------------------------------------//
+    //----------------------End of Forecast--------------------------//
 
+    //------------------------Weather Details--------------------//
+
+    TextView humidityTV, visibilityTV, pressureTV,sunSetTV, sunRiseTV;
+    ImageView detailsImageView;
+    //------------------------End of Weatehr Details---------------------//
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
         variableInitialize();
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
-/*      Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int height = size.y;
-        int width = size.x;
-        linearLayout.getLayoutParams().height = height;*/
-
+        if (Build.VERSION.SDK_INT >= 21) {
+            window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+           // window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark,getTheme()));
+        }
         laibraryInitial();
 
         getCities();
 
-  //      getData();
-
-
     }
+
+
+
+
+
 
     private void getCities() {
         cities = new ArrayList<>();
@@ -177,84 +192,19 @@ public class StartActivity extends AppCompatActivity {
 
         weatherCall.enqueue(new Callback<Weather>() {
 
+            @TargetApi(Build.VERSION_CODES.M)
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onResponse(Call<Weather> call, Response<Weather> response) {
 
                 weather = response.body();
 
-                if(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getText().equals("Sunny")){
-                    mainLayout.setBackgroundResource(R.drawable.sunny_image);
-                }else if(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getText().equals("Mostly Sunny")){
-                    mainLayout.setBackgroundResource(R.drawable.cloudy_image);
-                }else if(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getText().equals("Partly Sunny")){
-                    mainLayout.setBackgroundResource(R.drawable.cloudy_image);
-                }else if(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getText().equals("Cloudy")){
-                    mainLayout.setBackgroundResource(R.drawable.cloudy_image);
-                }else if(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getText().equals("Clear")){
-                    mainLayout.setBackgroundResource(R.drawable.night_image);
-                }else if(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getText().equals("Mostly Clear")){
-                    mainLayout.setBackgroundResource(R.drawable.night_image);
-                }else if(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getText().equals("Partly Clear")){
-                    mainLayout.setBackgroundResource(R.drawable.night_image);
-                }else if(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getText().equals("Partly Cloudy")){
-                    mainLayout.setBackgroundResource(R.drawable.cloudy_image);
-                }else if(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getText().equals("Mostly Cloudy")){
-                    mainLayout.setBackgroundResource(R.drawable.cloudy_image);
-                }
+                //-----------------------Basic Information-------------------------//
+                setImages();
 
-                avgTextView.setText(weather.getQuery().getResults().getChannel().getItem()
-                        .getCondition().getTemp()+ (char) 0x00B0+
-                        ""+ weather.getQuery().getResults().getChannel().getUnits().getTemperature());
-                maxTextView.setText(weather.getQuery().getResults().getChannel().getItem()
-                        .getForecast().get(0).getHigh()+ (char) 0x00B0+
-                        ""+ weather.getQuery().getResults().getChannel().getUnits().getTemperature());
-                maxImageView.setBackgroundResource(R.drawable.arrow_up);
-                minTextView.setText(weather.getQuery().getResults().getChannel().getItem()
-                        .getForecast().get(0).getLow()+ (char) 0x00B0+
-                        ""+ weather.getQuery().getResults().getChannel().getUnits().getTemperature());
-                minImageView.setBackgroundResource(R.drawable.arrow_down);
+                setInitialInfo();
 
-                textTextView.setText(weather.getQuery().getResults().getChannel()
-                        .getItem().getCondition().getText());
-                if (textTextView.getText().equals("Sunny")){
-                    textImageView.setBackgroundResource(R.drawable.sunny_logo);
-                }else if(textTextView.getText().equals("Mostly Sunny")){
-                    textImageView.setBackgroundResource(R.drawable.sunny_logo);
-                }else if(textTextView.getText().equals("Partly Sunny")){
-                    textImageView.setBackgroundResource(R.drawable.sunny_logo);
-                }else if(textTextView.getText().equals("Cloudy")){
-                    textImageView.setBackgroundResource(R.drawable.cloud_logo);
-                }else if(textTextView.getText().equals("Clear")){
-                    textImageView.setBackgroundResource(R.drawable.clear_moon);
-                }else if(textTextView.getText().equals("Mostly Clear")){
-                    textImageView.setBackgroundResource(R.drawable.clear_moon);
-                }else if(textTextView.getText().equals("Partly Clear")){
-                    textImageView.setBackgroundResource(R.drawable.clear_moon);
-                }else if(textTextView.getText().equals("Partly Cloudy")){
-                    textImageView.setBackgroundResource(R.drawable.cloud_logo);
-                }else if(textTextView.getText().equals("Mostly Cloudy")){
-                    textImageView.setBackgroundResource(R.drawable.cloud_logo);
-                }
-
-
-                windTextView.setText(weather.getQuery().getResults().getChannel().getWind().getSpeed()+
-                            " "+weather.getQuery().getResults().getChannel().getUnits().getSpeed());
-
-
-                /*Picasso.with(StartActivity.this)
-                        .load(weather.getQuery().getResults().getChannel().getImage().getUrl())
-                        .resize(250, 250)
-                        .centerCrop()
-                        .into(imageImageView);*/
+                //-----------------------End of Basic Information-----------------//
 
 
 //                ------------------------Forecast-----------------------------//
@@ -277,7 +227,11 @@ public class StartActivity extends AppCompatActivity {
                     }
 
 
-                    //--------------------------------------------------------//
+                    //---------------------End of Forecast---------------//
+
+                    //-----------------------Weather Details-------------------//
+                    getWeatherDetails();
+                    //----------------------End of Weather Details------------------//
                 }
             }
 
@@ -305,6 +259,7 @@ public class StartActivity extends AppCompatActivity {
         minTextView = (TextView) findViewById(R.id.minTextView);
         textTextView = (TextView) findViewById(R.id.textTextView);
         windTextView = (TextView) findViewById(R.id.windTextView);
+        poweredbyTextView = (TextView) findViewById(R.id.poweredByTextView);
 
         minImageView = (ImageView) findViewById(R.id.minImageView);
         maxImageView = (ImageView) findViewById(R.id.maxImageView);
@@ -366,7 +321,102 @@ public class StartActivity extends AppCompatActivity {
         daySevenIV= (ImageView) findViewById(R.id.daySevenImageView);
        // ---------------------------------------------------------------//
 
+        //-------------------Weather Details Variable Initialize------------//
+        humidityTV = (TextView) findViewById(R.id.humidiValueTV);
+        visibilityTV = (TextView) findViewById(R.id.visibilyValueTV);
+        pressureTV = (TextView) findViewById(R.id.pressureValueTV);
+        sunRiseTV = (TextView) findViewById(R.id.sunriseValuTV);
+        sunSetTV = (TextView) findViewById(R.id.sunsetValuTV);
+
+        detailsImageView = (ImageView) findViewById(R.id.detailsImgIV);
+        //------------------------------------------------------------------------//
+
     }
+
+    //---------------------------Basic Information----------------------------//
+    public void setImages(){
+        if(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getText().equals("Sunny")){
+            mainLayout.setBackgroundResource(R.drawable.sunny_image);
+            textImageView.setBackgroundResource(R.drawable.sunny_logo);
+            detailsImageView.setBackgroundResource(R.drawable.sunny_logo);
+//                    window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark,getTheme()));
+        }else if(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getText().equals("Mostly Sunny")){
+            mainLayout.setBackgroundResource(R.drawable.sunny_image);
+            textImageView.setBackgroundResource(R.drawable.sunny_logo);
+            detailsImageView.setBackgroundResource(R.drawable.sunny_logo);
+//                    window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark,getTheme()));
+        }else if(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getText().equals("Partly Sunny")){
+            mainLayout.setBackgroundResource(R.drawable.sunny_image);
+            textImageView.setBackgroundResource(R.drawable.sunny_logo);
+            detailsImageView.setBackgroundResource(R.drawable.sunny_logo);
+//                    window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark,getTheme()));
+        }else if(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getText().equals("Cloudy")){
+            mainLayout.setBackgroundResource(R.drawable.cloudy_image);
+            textImageView.setBackgroundResource(R.drawable.cloud_logo);
+            detailsImageView.setBackgroundResource(R.drawable.cloud_logo);
+//                    window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDarkBlack,getTheme()));
+        }else if(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getText().equals("Clear")){
+            mainLayout.setBackgroundResource(R.drawable.night_image);
+            textImageView.setBackgroundResource(R.drawable.clear_moon);
+            detailsImageView.setBackgroundResource(R.drawable.clear_moon);
+//                    window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDarkBlack,getTheme()));
+        }else if(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getText().equals("Mostly Clear")){
+            mainLayout.setBackgroundResource(R.drawable.night_image);
+            textImageView.setBackgroundResource(R.drawable.clear_moon);
+            detailsImageView.setBackgroundResource(R.drawable.clear_moon);
+//                    window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDarkBlack,getTheme()));
+        }else if(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getText().equals("Partly Clear")){
+            mainLayout.setBackgroundResource(R.drawable.night_image);
+            textImageView.setBackgroundResource(R.drawable.clear_moon);
+            detailsImageView.setBackgroundResource(R.drawable.clear_moon);
+//                    window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDarkBlack,getTheme()));
+        }else if(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getText().equals("Partly Cloudy")){
+            mainLayout.setBackgroundResource(R.drawable.clear_logo);
+            textImageView.setBackgroundResource(R.drawable.clear_logo);
+            detailsImageView.setBackgroundResource(R.drawable.clear_logo);
+//                    window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDarkBlack,getTheme()));
+        }else if(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getText().equals("Mostly Cloudy")){
+            mainLayout.setBackgroundResource(R.drawable.cloudy_image);
+            textImageView.setBackgroundResource(R.drawable.cloud_logo);
+            detailsImageView.setBackgroundResource(R.drawable.cloud_logo);
+//                    window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDarkBlack,getTheme()));
+        }
+    }
+
+    public void setInitialInfo(){
+        avgTextView.setText(weather.getQuery().getResults().getChannel().getItem()
+                .getCondition().getTemp()+ (char) 0x00B0+
+                ""+ weather.getQuery().getResults().getChannel().getUnits().getTemperature());
+        maxTextView.setText(weather.getQuery().getResults().getChannel().getItem()
+                .getForecast().get(0).getHigh()+ (char) 0x00B0+
+                ""+ weather.getQuery().getResults().getChannel().getUnits().getTemperature());
+        maxImageView.setBackgroundResource(R.drawable.arrow_up);
+        minTextView.setText(weather.getQuery().getResults().getChannel().getItem()
+                .getForecast().get(0).getLow()+ (char) 0x00B0+
+                ""+ weather.getQuery().getResults().getChannel().getUnits().getTemperature());
+        minImageView.setBackgroundResource(R.drawable.arrow_down);
+
+        textTextView.setText(weather.getQuery().getResults().getChannel()
+                .getItem().getCondition().getText());
+
+
+        windTextView.setText(weather.getQuery().getResults().getChannel().getWind().getSpeed()+
+                " "+weather.getQuery().getResults().getChannel().getUnits().getSpeed());
+
+        poweredbyTextView.setText("Powered by "+weather.getQuery().getResults().getChannel().getImage().getTitle());
+    }
+    //------------------------------End of Basic Information------------------//
+
+
 //  ---------------------------------ForeCast GetDays-------------------------//
 public void DayOne(){
     String dayOne = weather.getQuery().getResults().getChannel().getItem().getForecast().get(0).getDay();
@@ -390,11 +440,10 @@ public void DayOne(){
     }else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(0).getText().equals("Cloudy")) {
         dayOneIV.setImageResource(R.drawable.cloud_logo);
     } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(0).getText().equals("Partly Cloudy")) {
-        dayOneIV.setImageResource(R.drawable.cloud_logo);
+        dayOneIV.setImageResource(R.drawable.clear_logo);
     } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(0).getText().equals("Mostly Cloudy")) {
         dayOneIV.setImageResource(R.drawable.cloud_logo);
     }
-
 
 }
     public void DayTwo(){
@@ -419,7 +468,7 @@ public void DayOne(){
         }else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(1).getText().equals("Cloudy")) {
             dayTwoIV.setImageResource(R.drawable.cloud_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(1).getText().equals("Partly Cloudy")) {
-            dayTwoIV.setImageResource(R.drawable.cloud_logo);
+            dayTwoIV.setImageResource(R.drawable.clear_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(1).getText().equals("Mostly Cloudy")) {
             dayTwoIV.setImageResource(R.drawable.cloud_logo);
         }
@@ -446,7 +495,7 @@ public void DayOne(){
         }else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(2).getText().equals("Cloudy")) {
             dayThreeIV.setImageResource(R.drawable.cloud_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(2).getText().equals("Partly Cloudy")) {
-            dayThreeIV.setImageResource(R.drawable.cloud_logo);
+            dayThreeIV.setImageResource(R.drawable.clear_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(2).getText().equals("Mostly Cloudy")) {
             dayThreeIV.setImageResource(R.drawable.cloud_logo);
         }
@@ -475,7 +524,7 @@ public void DayOne(){
         }else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(3).getText().equals("Cloudy")) {
             dayFourIV.setImageResource(R.drawable.cloud_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(3).getText().equals("Partly Cloudy")) {
-            dayFourIV.setImageResource(R.drawable.cloud_logo);
+            dayFourIV.setImageResource(R.drawable.clear_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(3).getText().equals("Mostly Cloudy")) {
             dayFourIV.setImageResource(R.drawable.cloud_logo);
         }
@@ -504,7 +553,7 @@ public void DayOne(){
         }else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(4).getText().equals("Cloudy")) {
             dayFiveIV.setImageResource(R.drawable.cloud_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(4).getText().equals("Partly Cloudy")) {
-            dayFiveIV.setImageResource(R.drawable.cloud_logo);
+            dayFiveIV.setImageResource(R.drawable.clear_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(4).getText().equals("Mostly Cloudy")) {
             dayFiveIV.setImageResource(R.drawable.cloud_logo);
         }
@@ -531,7 +580,7 @@ public void DayOne(){
         }else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(5).getText().equals("Cloudy")) {
             daySixIV.setImageResource(R.drawable.cloud_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(5).getText().equals("Partly Cloudy")) {
-            daySixIV.setImageResource(R.drawable.cloud_logo);
+            daySixIV.setImageResource(R.drawable.clear_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(5).getText().equals("Mostly Cloudy")) {
             daySixIV.setImageResource(R.drawable.cloud_logo);
         }
@@ -541,8 +590,8 @@ public void DayOne(){
         String daySeven = weather.getQuery().getResults().getChannel().getItem().getForecast().get(6).getDay();
         String daySevenName = getDay(daySeven);
         daySevenTV.setText(daySevenName);
-        daySevenHighTV.setText(weather.getQuery().getResults().getChannel().getItem().getForecast().get(6).getHigh());
-        daySevenLowTV.setText(weather.getQuery().getResults().getChannel().getItem().getForecast().get(6).getLow());
+        daySevenHighTV.setText(weather.getQuery().getResults().getChannel().getItem().getForecast().get(6).getHigh()+ (char) 0x00B0);
+        daySevenLowTV.setText(weather.getQuery().getResults().getChannel().getItem().getForecast().get(6).getLow()+ (char) 0x00B0);
 
         if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(6).getText().equals("Sunny")) {
             daySevenIV.setImageResource(R.drawable.sunny_logo);
@@ -559,7 +608,7 @@ public void DayOne(){
         }else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(6).getText().equals("Cloudy")) {
             daySevenIV.setImageResource(R.drawable.cloud_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(6).getText().equals("Partly Cloudy")) {
-            daySevenIV.setImageResource(R.drawable.cloud_logo);
+            daySevenIV.setImageResource(R.drawable.clear_logo);
         } else if (weather.getQuery().getResults().getChannel().getItem().getForecast().get(6).getText().equals("Mostly Cloudy")) {
             daySevenIV.setImageResource(R.drawable.cloud_logo);
         }
@@ -584,6 +633,28 @@ public void DayOne(){
             dayName="Thursday";
         }
         return  dayName;
+    }
+    //--------------------------------------------Forecast End----------------------------------------------------------//
+
+    public void getWeatherDetails(){
+        humidityTV.setText(weather.getQuery().getResults().getChannel().getAtmosphere().getHumidity()+ "%");
+        String getVisi=(weather.getQuery().getResults().getChannel().getAtmosphere().getVisibility());
+        double vi = Double.parseDouble(getVisi);
+        double mul=0.621371;
+        double miles= (vi * mul);
+        Double m = new Double(miles);
+        int mi = m.intValue();
+        visibilityTV.setText( String.valueOf( mi + " mi" ) );
+
+        String getPress=(weather.getQuery().getResults().getChannel().getAtmosphere().getPressure());
+        double p = Double.parseDouble(getPress);
+        Double pp = new Double(p);
+        int press = pp.intValue();
+        pressureTV.setText( String.valueOf( press + " hPa" ) );
+
+        sunRiseTV.setText(weather.getQuery().getResults().getChannel().getAstronomy().getSunrise());
+        sunSetTV.setText(weather.getQuery().getResults().getChannel().getAstronomy().getSunset());
+
     }
 
 
