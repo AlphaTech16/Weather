@@ -14,6 +14,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -25,12 +26,8 @@ import android.widget.Toast;
 import com.avash.weather.R;
 import com.avash.weather.api.WeatherApi;
 import com.avash.weather.model.Weather;
-import com.squareup.picasso.Picasso;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,12 +41,15 @@ public class StartActivity extends AppCompatActivity {
 
     ScrollView scrollView;
 
-    TextView avgTextView,maxTextView,minTextView,textTextView,windTextView,poweredbyTextView;
+    EditText focusEditText;
+
+    TextView avgTextView,maxTextView,minTextView,textTextView,windTextView, poweredByTextView;
 
     ImageView minImageView,maxImageView,textImageView;
 
     LinearLayout mainLayout;
     RelativeLayout relativeLayout;
+    RelativeLayout internetLayout;
 
     Spinner citySpinner;
 
@@ -109,7 +109,15 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        variableInitialize();
+        initializeReferences();
+
+        workForRefresh();
+
+    }
+
+    private void workForRefresh() {
+        internetLayout.setVisibility(View.GONE);
+        scrollView.setVisibility(View.VISIBLE);
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
@@ -117,17 +125,12 @@ public class StartActivity extends AppCompatActivity {
             window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-           // window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark,getTheme()));
+            // window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark,getTheme()));
         }
         laibraryInitial();
 
         getCities();
-
     }
-
-
-
-
 
 
     private void getCities() {
@@ -142,6 +145,7 @@ public class StartActivity extends AppCompatActivity {
         cities.add("London");
         cities.add("California");
         cities.add("Berlin");
+        cities.add("Rome");
 
         cityAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cities);
         cityAdapter.setDropDownViewResource(R.layout.spinner_item);
@@ -168,27 +172,10 @@ public class StartActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        if (selectedCityPosition == 0){
-            weatherCall = weatherApi.getWeatherDataDhaka();
-        }else if(selectedCityPosition == 1){
-            weatherCall = weatherApi.getWeatherDataChittagong();
-        }else if(selectedCityPosition == 2){
-            weatherCall = weatherApi.getWeatherDataRajshahi();
-        }else if(selectedCityPosition == 3){
-            weatherCall = weatherApi.getWeatherDataKhulna();
-        }else if(selectedCityPosition == 4){
-            weatherCall = weatherApi.getWeatherDataRangpur();
-        }else if(selectedCityPosition == 5){
-            weatherCall = weatherApi.getWeatherDataSylhet();
-        }else if(selectedCityPosition == 6){
-            weatherCall = weatherApi.getWeatherDataParis();
-        }else if(selectedCityPosition == 7){
-            weatherCall = weatherApi.getWeatherDataLondon();
-        }else if(selectedCityPosition == 8){
-            weatherCall = weatherApi.getWeatherDataCalifornia();
-        }else if(selectedCityPosition == 9){
-            weatherCall = weatherApi.getWeatherDataBerlin();
-        }
+        String str1 = "v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D\"";
+        String str2 = "%2C%20ak\")&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+        weatherCall = weatherApi.getWeatherData(str1+cities.get(selectedCityPosition)+str2);
+
 
         weatherCall.enqueue(new Callback<Weather>() {
 
@@ -198,6 +185,11 @@ public class StartActivity extends AppCompatActivity {
             public void onResponse(Call<Weather> call, Response<Weather> response) {
 
                 weather = response.body();
+
+                focusEditText.setVisibility(View.VISIBLE);
+                focusEditText.setFocusableInTouchMode(true);
+                focusEditText.requestFocus();
+                focusEditText.setVisibility(View.INVISIBLE);
 
                 //-----------------------Basic Information-------------------------//
                 setImages();
@@ -237,8 +229,10 @@ public class StartActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Weather> call, Throwable t) {
-
-                Toast.makeText(StartActivity.this, "Sorry!!!\nPlease check your internet connection.", Toast.LENGTH_SHORT).show();
+                internetLayout.setVisibility(View.VISIBLE);
+                scrollView.setVisibility(View.GONE);
+                //workForRefresh();
+//                Toast.makeText(StartActivity.this, "Sorry!!!\nPlease check your internet connection.", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -251,15 +245,17 @@ public class StartActivity extends AppCompatActivity {
         weatherApi = retrofit.create(WeatherApi.class);
     }
 
-    public void variableInitialize(){
+    public void initializeReferences(){
         scrollView = (ScrollView) findViewById(R.id.scrollView);
+
+        focusEditText = (EditText)findViewById(R.id.focusEditText);
 
         avgTextView = (TextView) findViewById(R.id.avgTextView);
         maxTextView = (TextView) findViewById(R.id.maxTextView);
         minTextView = (TextView) findViewById(R.id.minTextView);
         textTextView = (TextView) findViewById(R.id.textTextView);
         windTextView = (TextView) findViewById(R.id.windTextView);
-        poweredbyTextView = (TextView) findViewById(R.id.poweredByTextView);
+        poweredByTextView = (TextView) findViewById(R.id.poweredByTextView);
 
         minImageView = (ImageView) findViewById(R.id.minImageView);
         maxImageView = (ImageView) findViewById(R.id.maxImageView);
@@ -268,6 +264,7 @@ public class StartActivity extends AppCompatActivity {
 
         mainLayout = (LinearLayout) findViewById(R.id.mainLayout);
         relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
+        internetLayout = (RelativeLayout)findViewById(R.id.internetLayout);
 
         citySpinner = (Spinner) findViewById(R.id.citySpinner);
 
@@ -412,7 +409,7 @@ public class StartActivity extends AppCompatActivity {
         windTextView.setText(weather.getQuery().getResults().getChannel().getWind().getSpeed()+
                 " "+weather.getQuery().getResults().getChannel().getUnits().getSpeed());
 
-        poweredbyTextView.setText("Powered by "+weather.getQuery().getResults().getChannel().getImage().getTitle());
+        poweredByTextView.setText("Powered by "+weather.getQuery().getResults().getChannel().getImage().getTitle());
     }
     //------------------------------End of Basic Information------------------//
 
@@ -658,5 +655,8 @@ public void DayOne(){
     }
 
 
-
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public void pageRefresh(View view) {
+         workForRefresh();
+    }
 }

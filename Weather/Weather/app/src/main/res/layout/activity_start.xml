@@ -34,6 +34,32 @@
         </Spinner>
 
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:padding="2dp"
+        android:background="#bf1919"
+        android:id="@+id/internetLayout">
+        <TextView
+            android:id="@+id/internetTextView"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="18dp"
+            android:text="Sorry! No Internet"/>
+        <Button
+            android:id="@+id/refreshButton"
+            android:layout_width="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_marginLeft="30dp"
+            android:onClick="pageRefresh"
+            android:background="@drawable/refresh"/>
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -58,6 +84,12 @@
                 android:layout_height="10dp"
                 android:id="@+id/relativeLayout"
                 android:padding="10dp">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/focusEditText"
+                    android:visibility="invisible"
+                    android:layout_alignParentRight="true"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
